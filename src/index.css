@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@utility clickable {
+    @apply rounded bg-background my-1;
+}
+
+@utility textbox {
+    @apply outline-background outline-solid rounded mx-2;
+}
+
+@theme {
+    --color-background: #1f5f38;
+    --color-foreground: #08f0ff;
+}
+
+@layer base {
+    button {
+	@apply clickable;
+    }
+
+    body {
+	@apply bg-[#000808] text-foreground;
+    }
+}
+
+@utility centered-column {
+    @apply flex justify-center flex-col items-center;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		 sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

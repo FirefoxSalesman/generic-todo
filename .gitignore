@@ -1,0 +1,5 @@
+.ctags.d
+.direnv
+dist
+node_modules
+public
