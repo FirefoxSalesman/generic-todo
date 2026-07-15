@@ -23,8 +23,12 @@
     }
 }
 
+@utility flex-column {
+    @apply flex flex-col;
+}
+
 @utility centered-column {
-    @apply flex justify-center flex-col items-center;
+    @apply justify-center flex-column items-center;
 }
 
 body {

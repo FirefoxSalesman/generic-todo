@@ -8,11 +8,11 @@ export default function ViewTasks({ tasks }) {
 				(Array.isArray(tasks) && tasks.length === 0) ? (
 					<div className='centered-column'>You don't have any tasks.</div>
 				) : (
-					<ul className='overflow-y-auto h-150 centered-column'>
+					<ul className='overflow-y-auto h-150 flex-column'>
 						{
 							tasks.map((t) => {
 								return (
-									<li key={id++}>
+									<li className="mx-auto" key={id++}>
 										<div className="text-[2em] font-bold">{t.name}</div>
 										<div>{t.formatDate()}</div>
 										<div>{t.description}</div>
