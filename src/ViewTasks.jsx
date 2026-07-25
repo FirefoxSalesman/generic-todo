@@ -8,7 +8,7 @@ export default function ViewTasks({ tasks }) {
 				(Array.isArray(tasks) && tasks.length === 0) ? (
 					<div className='centered-column'>You don't have any tasks.</div>
 				) : (
-					<ul className='overflow-y-auto h-150 flex-column'>
+					<ul className='overflow-y-auto max-h-150 flex-column'>
 						{
 							tasks.map((t) => {
 								return (
