@@ -6,5 +6,8 @@ export default function tasksReducer(tasks, action) {
 				action.task
 			]
 		}
+		case 'remove': {
+			return tasks.filter((task) => !task.equals(action.task));
+		}
 	}
 }

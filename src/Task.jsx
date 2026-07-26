@@ -34,4 +34,8 @@ export default class Task {
 		}
 		return `* TODO ${this.name}\n#+DEADLINE:<${this.date.getFullYear()}-${format(this.date.getMonth())}-${format(this.date.getDate())} ${mkDate()}>\n${this.description}`;
 	}
+
+	equals(other) {
+		return this.name === other.name && this.description === other.description && this.date === other.date;
+	}
 }

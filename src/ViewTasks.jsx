@@ -1,6 +1,6 @@
 import './index.css'
 
-export default function ViewTasks({ tasks }) {
+export default function ViewTasks({ tasks, dispatch }) {
 	let id = 0;
 	return (
 		<div className="mt-5">
@@ -12,10 +12,11 @@ export default function ViewTasks({ tasks }) {
 						{
 							tasks.map((t) => {
 								return (
-									<li className="mx-auto" key={id++}>
+									<li className="mx-auto group hover:bg-orange-100 rounded" key={id++}>
 										<div className="text-[2em] font-bold">{t.name}</div>
 										<div>{t.formatDate()}</div>
 										<div>{t.description}</div>
+										<button className="not-group-hover:hidden" onClick={() => { dispatch({ type: 'remove', task: t }) }}>Delete</button>
 									</li>
 								);
 							})

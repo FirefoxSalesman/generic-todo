@@ -12,7 +12,7 @@ function Root() {
 	const [tasks, dispatch] = useReducer(tasksReducer, []);
 	return (
 		<div >
-			<ViewTasks tasks={tasks} />
+			<ViewTasks tasks={tasks} dispatch={dispatch} />
 			<div className='centered-column'>
 				<AddTodo dispatch={dispatch} />
 				<button onClick={() => {
