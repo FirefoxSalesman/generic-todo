@@ -9,5 +9,14 @@ export default function tasksReducer(tasks, action) {
 		case 'remove': {
 			return tasks.filter((task) => !task.equals(action.task));
 		}
+		case 'edit': {
+			return tasks.map((task) => {
+				if (task.equals(action.oldTask)) {
+					return action.newTask;
+				} else {
+					return task;
+				}
+			});
+		}
 	}
 }

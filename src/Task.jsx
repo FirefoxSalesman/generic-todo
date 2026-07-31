@@ -1,3 +1,8 @@
+let format = (num) => {
+	let realNum = num + 1;
+	return realNum < 10 ? `0${realNum}` : realNum;
+};
+
 export default class Task {
 	constructor(name, description, date) {
 		this.name = name;
@@ -9,11 +14,11 @@ export default class Task {
 		return Intl.DateTimeFormat("en-US", { timeZone: "UTC" }).format(this.date);
 	}
 
+	dashedDate() {
+		return `${this.date.getFullYear()}-${format(this.date.getMonth())}-${format(this.date.getDate())}`;
+	}
+
 	exportToOrg() {
-		let format = (num) => {
-			let realNum = num + 1;
-			return realNum < 10 ? `0${realNum}` : realNum;
-		};
 		let mkDate = () => {
 			switch (this.date.getDay()) {
 				case 0:
@@ -32,7 +37,7 @@ export default class Task {
 					return 'Sun';
 			}
 		}
-		return `* TODO ${this.name}\n#+DEADLINE:<${this.date.getFullYear()}-${format(this.date.getMonth())}-${format(this.date.getDate())} ${mkDate()}>\n${this.description}`;
+		return `* TODO ${this.name}\n#+DEADLINE:<${this.dashedDate()} ${mkDate()}>\n${this.description}`;
 	}
 
 	equals(other) {
