@@ -1,0 +1,10 @@
+* TODO Implement a server
+** TODO Decide what to make the server with
++ We already have node. It's probably best not to complicate things without reason
+
+** TODO Implement users, & store todos on the server
++ I think we'll have to figure out hashing
++ While we're in the process of doing this, it will be fine to stick info into a json file, but we will need to move to a real database sooner rather than later
+
+** TODO Get a real database.
++ Preferably something with SQL so we can brush up on that.

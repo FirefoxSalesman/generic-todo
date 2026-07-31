@@ -16,12 +16,19 @@ function Root() {
 			<div className='centered-column'>
 				<AddTodo dispatch={dispatch} />
 				<button onClick={() => {
-					console.log(tasks.map((t) => {
-						return t.exportToOrg();
-					}));
+					let org = '';
+					for (let t of tasks) {
+						org += t.exportToOrg();
+						org += '\n\n';
+					}
+					// https://fmennen.de/post/creating-and-downloading-files-using-java-script
+					const downloadLink = document.createElement("a");
+					downloadLink.href = URL.createObjectURL(new Blob([org], { type: "text/plain" }));
+					downloadLink.download = "exported.org";
+					downloadLink.click();
 				}} >Export to Org</button>
 			</div>
-		</div>
+		</div >
 	);
 }
 
